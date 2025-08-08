@@ -690,7 +690,7 @@
 
 "@tailwindcss/vite@^4.1.11":
   version "4.1.11"
-  resolved "https://registry.npmjs.org/@tailwindcss/vite/-/vite-4.1.11.tgz"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/vite/-/vite-4.1.11.tgz#9af1c9d328b31e67c6a0657500bcaa78be6df9f7"
   integrity sha512-RHYhrR3hku0MJFRV+fN2gNbDNEh3dwKvY8XJvTxCSXeMOsCRSr+uKvDWQcbizrHgjML6ZmTE5OwMrl5wKcujCw==
   dependencies:
     "@tailwindcss/node" "4.1.11"
@@ -915,7 +915,7 @@ asynckit@^0.4.0:
 
 axios@^1.11.0:
   version "1.11.0"
-  resolved "https://registry.npmjs.org/axios/-/axios-1.11.0.tgz"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.11.0.tgz#c2ec219e35e414c025b2095e8b8280278478fdb6"
   integrity sha512-1Lx3WLFQWm3ooKDYZD1eXmoGO9fxYQjrycfHFC8P0sCfQVXyROp0p9PFWBehewBOdCwHc+f/b8I0fMto5eSfwA==
   dependencies:
     follow-redirects "^1.15.6"
@@ -1822,7 +1822,7 @@ react-refresh@^0.17.0:
 
 react-router-dom@^7.8.0:
   version "7.8.0"
-  resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-7.8.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-7.8.0.tgz#8c5e6f86e6c1f82037586124130df5926fdab10c"
   integrity sha512-ntInsnDVnVRdtSu6ODmTQ41cbluak/ENeTif7GBce0L6eztFg6/e1hXAysFQI8X25C8ipKmT9cClbJwxx3Kaqw==
   dependencies:
     react-router "7.8.0"
@@ -1937,7 +1937,7 @@ supports-color@^7.1.0:
 
 tailwindcss@4.1.11, tailwindcss@^4.1.11:
   version "4.1.11"
-  resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.11.tgz"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.1.11.tgz#799af3e98c19c5baaefafc6e0c16304a0e684854"
   integrity sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==
 
 tapable@^2.2.0:
