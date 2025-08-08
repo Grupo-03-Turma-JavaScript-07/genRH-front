@@ -76,7 +76,7 @@ function FormDepartamento() {
           <input
             type="text"
             placeholder="Nome do departamento"
-            name="nome"
+            name="descricao"
             className="border-2 border-slate-700 rounded p-2"
             value={departamento.descricao || ""}
             onChange={atualizarEstado}

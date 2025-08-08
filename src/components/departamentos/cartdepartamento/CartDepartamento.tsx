@@ -10,7 +10,7 @@ function CartDepartamento({departamento}: CartDepartamentoProps ) {
 
   return (
     <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-red-800 text-white font-bold text-2xl'>categoria</header>
+            <header className='py-2 px-6 bg-red-800 text-white font-bold text-2xl'>Departamento</header>
             {/* <p className='p-8 text-3xl bg-slate-200 h-full'>{departamento.nome}</p> */}
             <p className='p-8 text-3xl bg-slate-200 h-full'>{departamento.descricao}</p>
             
