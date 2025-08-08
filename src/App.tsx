@@ -11,8 +11,12 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <div className='grid grid-cols-[0.25fr_1.50fr] min-h-screen'>
+          <div className='h-full'>
             <Navbar />
-            <div className='min-h-[80vh]'>
+          </div>
+          <div className='flex flex-col'>
+            <div className='flex-1'>
               <Routes>
                 <Route path='/' element={<Login />} />
                 <Route path='/home' element={<Home />} />
@@ -20,7 +24,9 @@ function App() {
               </Routes>
             </div>
             <Footer />
-          </BrowserRouter>
+          </div>
+        </div>
+      </BrowserRouter>
     </>
   )
 }
