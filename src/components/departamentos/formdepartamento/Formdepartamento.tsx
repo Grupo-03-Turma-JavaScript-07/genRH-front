@@ -36,7 +36,7 @@ function FormDepartamento() {
   }
 
   function retornar() {
-    navigate("/departamento");
+    navigate("/departamentos");
   }
 
   async function NovoDepartamento(e: ChangeEvent<HTMLFormElement>) {
@@ -77,18 +77,6 @@ function FormDepartamento() {
             type="text"
             placeholder="Nome do departamento"
             name="nome"
-            className="border-2 border-slate-700 rounded p-2"
-            value={departamento.nome || ""}
-            onChange={atualizarEstado}
-            required
-          />
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição do departamento</label>
-          <textarea
-            placeholder="Informe o nome do departamento"
-            name="descricao"
             className="border-2 border-slate-700 rounded p-2"
             value={departamento.descricao || ""}
             onChange={atualizarEstado}

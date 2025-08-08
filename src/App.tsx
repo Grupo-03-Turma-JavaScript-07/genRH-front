@@ -1,10 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Home from './pages/home/Home'
 import Footer from './components/footer/Footer'
-import Navbar from './components/navbar/Navbar'
-import Login from './pages/login/Login'
 import ListaFuncionarios from './components/funcionarios/listafuncionarios/ListaFuncionarios'
+import Navbar from './components/navbar/Navbar'
+import Home from './pages/home/Home'
+import Login from './pages/login/Login'
+import Manutencao from './pages/manutencao/Manutencao'
+import Deletardepartamento from './components/departamentos/deletardepartamento/Deletardepartamento'
+import Formdepartamento from './components/departamentos/formdepartamento/Formdepartamento'
+import Listadepartamento from './components/departamentos/listadepartamento/Listadepartamento'
 
 
 function App() {
@@ -22,7 +26,11 @@ function App() {
                 <Route path='/' element={<Login />} />
                 <Route path='/home' element={<Home />} />
                 <Route path='/funcionarios' element={<ListaFuncionarios />} />
-                <Route path='/manutencao' element={<Home />} />
+                <Route path='/manutencao' element={<Manutencao />} />
+                <Route path="/departamentos" element={<Listadepartamento />} />
+                <Route path="/departamentos/editar/:id" element={< Formdepartamento/>} />
+                <Route path="/departamentos/deletar/:id" element={< Deletardepartamento/>} />
+                <Route path="/departamentos/cadastrar" element={<Formdepartamento />} />
                 {/* <Route path='/' element={< />} /> */}
               </Routes>
             </div>
