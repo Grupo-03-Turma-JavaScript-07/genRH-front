@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/home/Home'
@@ -6,14 +5,18 @@ import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
 import Login from './pages/login/Login'
 
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <BrowserRouter>
+        <div className='grid grid-cols-[0.25fr_1.50fr] min-h-screen'>
+          <div className='h-full'>
             <Navbar />
-            <div className='min-h-[80vh]'>
+          </div>
+          <div className='flex flex-col'>
+            <div className='flex-1'>
               <Routes>
                 <Route path='/' element={<Login />} />
                 <Route path='/home' element={<Home />} />
@@ -22,7 +25,9 @@ function App() {
               </Routes>
             </div>
             <Footer />
-          </BrowserRouter>
+          </div>
+        </div>
+      </BrowserRouter>
     </>
   )
 }
