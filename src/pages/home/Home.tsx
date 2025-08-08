@@ -2,33 +2,39 @@ const hora = new Date().getHours();
 
 function Home() {
     return (
-          <section className="grid grid-flow-col grid-rows-2  bg-white rounded-lg">
-            <div className="row-span-2">
-              <img
-                src="https://ik.imagekit.io/gengrupo03/handshake.gif?updatedAt=1754669148690"
-                alt="Imagem grupo de colaboradores conversando "
-                className="rounded-lg w-[full] h-[40vw] object-cover shadow-xl/30 mask-radial-from-80%"
-              />
-            </div>
+          <section className="grid grid-cols-3 bg-white rounded-lg h-[40vw]">
+      {/* Coluna Esquerda */}
+      <div>
+        <img
+          src="https://ik.imagekit.io/gengrupo03/handshake.gif?updatedAt=1754669148690"
+          alt="Imagem grupo de colaboradores conversando"
+          className="rounded-lg w-full h-full object-cover shadow-xl/30"
+        />
+      </div>
 
-            <div className="row-start-1 row-end-4 justify-items-center mask-radial-at-center mask-radial-from-80%
-            bg-[url('https://ik.imagekit.io/gengrupo03/genRH/image.png?updatedAt=1754673810696')] bg-cover w-[full] h-full rounded-lg shadow-xl/30">
-              <img
-                src="https://ik.imagekit.io/gengrupo03/genRH/genrh-logo-red.png?updatedAt=1754660388110"
-                alt="Logo GenRH"
-                className="rounded-lg w-xs mb-15 "/>
+      {/* Coluna Direita com background ocupando tudo */}
+      <div className="col-span-2 justify-items-center rounded-lg shadow-xl/30 bg-[url('https://ik.imagekit.io/gengrupo03/genRH/image.png?updatedAt=1754673810696')] bg-cover bg-center">
+        <img
+          src="https://ik.imagekit.io/gengrupo03/genRH/genrh-logo-red.png?updatedAt=1754660388110"
+          alt="Logo GenRH"
+          className=" rounded-lg w-xs mb-6"
+        />
               {hora < 12 ? (
-                <h2 className='text-5xl font-bold'>Bom dia!</h2>
+                <h1 className='text-6xl text-red-900 font-bold mb-10'>Bom dia!</h1>
               ) : hora < 18 ? (
-                <h2 className='text-5xl font-bold'>Boa tarde!</h2>
+                <h1 className='text-6xl text-red-900 font-bold mb-10 drop-shadow-[0_0_6px_rgba(255,255,255,1)]'>Boa tarde!</h1>
               ) : (
-                <h2 className='text-5xl font-bold'>Boa noite!</h2>
+                <h1 className='text-6xl text-red-900 font-bold mb-10'>Boa noite!</h1>
               )}
 
-              <div className="grid grid-cols-3 pb-12 justify-items-end gap-4 m-12">
-                <div className=" col-span-2 font-bold text-3xl drop-shadow-[0_0_8px_rgba(0,0,0,1)]">Tecnologia que valoriza pessoas</div>
-                <div className=" col-span-2 font-bold text-3xl drop-shadow-[0_0_8px_rgba(0,0,0,1)]">Simplifique o RH. Potencialize resultados</div>
-                <div className=" col-span-2 justify-end font-bold text-3xl drop-shadow-[0_0_8px_rgba(0,0,0,1)]">Tudo que seu RH precisa, em um só lugar</div>
+              <div className="grid grid-cols-6 pb-12 gap-15 mx-30">
+                <div className=" col-span-3 text-nowrap font-bold text-5xl drop-shadow-[0_0_8px_rgba(255,255,255,1)]">Tecnologia que valoriza pessoas</div>
+                <div className="col-span-3"></div>
+                <div className=""></div>
+                <div className="col-span-3 text-nowrap font-bold text-5xl drop-shadow-[0_0_8px_rgba(255,255,255,1)]">Simplifique o RH. Potencialize resultados</div>
+                <div className="col-span-2"></div>
+                <div className="col-span-2"></div>
+                <div className="col-span-2 font-bold text-5xl text-nowrap drop-shadow-[0_0_8px_rgba(255,255,255,1)]">Tudo para o seu RH, em um só lugar</div>
               </div>
             </div>
           </section>
