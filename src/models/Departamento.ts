@@ -1,6 +1,6 @@
 import type Funcionario from "./Funcionario";
 
-export default interface Categoria{
+export default interface Departamento{
     id: number;
     nome: string;
     descricao: string;
