@@ -3,7 +3,7 @@ import type Funcionario from "../../../models/Funcionario";
 import { useNavigate, useParams } from "react-router-dom";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 
-function FormPostagem() {
+function FormFuncionario() {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -183,4 +183,4 @@ function FormPostagem() {
   );
 }
 
-export default FormPostagem;
+export default FormFuncionario;
