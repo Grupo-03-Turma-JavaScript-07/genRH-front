@@ -7,7 +7,6 @@ import Navbar from './components/navbar/Navbar'
 import Login from './pages/login/Login'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
