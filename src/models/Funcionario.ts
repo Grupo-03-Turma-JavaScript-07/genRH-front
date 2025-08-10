@@ -1,8 +1,10 @@
+import type Departamento from "./Departamento";
+
 export default interface Funcionario {
     id: number;
     nome: string;
+    salario: number;
     cpf: string;
-    salario: string;
-    contrato: string;
-    // departamento: Departamento | null;
+    contrato: number;
+    departamento: Departamento | null;
 }

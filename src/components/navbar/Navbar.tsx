@@ -24,7 +24,7 @@ function Navbar() {
             <div className="px-4 py-2 hover:bg-red-600 w-full flex items-center justify-between text-left font-semibold">Departamentos<CaretRightIcon/></div>
             <div className="absolute top-0 w-56 left-full bg-red-800 invisible group-hover:visible flex flex-col shadow-lg">
               <Link to="/departamentos" className="px-4 py-2 hover:bg-red-600 block w-full whitespace-nowrap">Todos os departamentos</Link>
-              <Link to="/cadastrardepartamento" className="px-4 py-2 hover:bg-red-600 block w-full whitespace-nowrap">Adicionar departamentos</Link>
+              <Link to="/departamentos/cadastrar" className="px-4 py-2 hover:bg-red-600 block w-full whitespace-nowrap">Adicionar departamentos</Link>
             </div>
           </div>
           <div className="relative group">

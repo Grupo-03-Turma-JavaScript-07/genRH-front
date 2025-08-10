@@ -1,5 +1,6 @@
 import { useEffect, useState, type ChangeEvent } from "react";
 import type Funcionario from "../../../models/Funcionario";
+import type Departamento from "../../../models/Departamento";
 import { useNavigate, useParams } from "react-router-dom";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 
@@ -9,10 +10,16 @@ function FormFuncionario() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [departamentos, setDepartamentos] = useState<Departamento[]>([]);
 
-  const tipoContrato = [{id: 1, tipo: "CLT"}, {id: 2, tipo: "PJ"}, {id: 3, tipo: "Trainee"}, {id: 4, tipo: "Estagio"}];
-  const [contrato, setContratos] = useState<tipoContrato>({ id: 0, tipo: "" });
+  type TipoContrato = { id: number; tipo: string };
+  const tipoContrato: TipoContrato[] = [
+    { id: 1, tipo: "CLT" },
+    { id: 2, tipo: "PJ" },
+    { id: 3, tipo: "Trainee" },
+    { id: 4, tipo: "Estagio" }
+  ];
+  const [contrato, setContratos] = useState<TipoContrato>({ id: 0, tipo: "" });
 
-  const [departamento, setDepartamento] = useState<Departamento>({ id: 0, descricao: "" });
+  const [departamento, setDepartamento] = useState<Departamento>({} as Departamento);
   const [funcionario, setFuncionario] = useState<Funcionario>({} as Funcionario);
 
   const { id } = useParams<{ id: string }>();
@@ -31,7 +38,7 @@ function FormFuncionario() {
 
   async function buscarDepartamentos() {
     try {
-      await buscar("/categorias", setDepartamentos);
+      await buscar("/departamentos", setDepartamentos);
     } catch (error: any) {}
   }
 
@@ -107,26 +114,26 @@ function FormFuncionario() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">CPF</label>
+          <label htmlFor="titulo">Salário</label>
           <input
-            type="text"
-            placeholder="Informe o CPF do funcionário"
-            name="CPF"
+            type="number"
+            placeholder="Informe o salário do funcionário"
+            name="salario"
             required
             className="border-2 border-slate-700 rounded p-2"
-            value={funcionario.cpf}
+            value={funcionario.salario}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Salário</label>
+          <label htmlFor="titulo">CPF</label>
           <input
             type="text"
-            placeholder="Informe o salário do funcionário"
-            name="Salario"
+            placeholder="Informe o CPF do funcionário"
+            name="cpf"
             required
             className="border-2 border-slate-700 rounded p-2"
-            value={funcionario.salario}
+            value={funcionario.cpf}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
@@ -142,7 +149,7 @@ function FormFuncionario() {
               Selecione o tipo de Contrato
             </option>
 
-            {contrato.map((contrato) => (
+            {tipoContrato.map((contrato) => (
               <>
                 <option value={contrato.id}>{contrato.tipo}</option>
               </>
@@ -170,13 +177,10 @@ function FormFuncionario() {
         </div>
         <button
           type="submit"
-          className="rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
-                               text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
+          className="rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
           disabled={carregandoDepartamento}
         >
-          {isLoading ? : (
-            <span>{id !== undefined ? "Atualizar" : "Cadastrar"}</span>
-          )}
+          <span>{id !== undefined ? "Atualizar" : "Cadastrar"}</span>
         </button>
       </form>
     </div>

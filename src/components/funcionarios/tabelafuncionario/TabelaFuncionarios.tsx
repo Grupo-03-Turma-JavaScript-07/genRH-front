@@ -38,7 +38,7 @@ function TabelaFuncionarios({funcionario} : TabelaFuncionariosProps) {
           <button>Editar</button>
         </Link>
         <Link
-          to={`/deletarpostagem/${funcionario.id}`}
+          to={`/deletarfuncionario/${funcionario.id}`}
           className="text-white bg-red-400 
 	hover:bg-red-700 w-full flex items-center justify-center"
         >

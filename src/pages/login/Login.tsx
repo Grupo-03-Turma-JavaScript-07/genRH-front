@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
@@ -29,12 +30,12 @@ function Login() {
 
                         />
                     </div>
-                    <button 
+                    <Link to={"/home"} 
                         type='submit' 
                         className="rounded-full bg-[#A81616] flex justify-center
                                   hover:bg-[#750A1F] text-white w-1/2 py-2">
                         <span>Entrar</span>
-                    </button>
+                    </Link>
 
                     <hr className="border-slate-800 w-full" />
 

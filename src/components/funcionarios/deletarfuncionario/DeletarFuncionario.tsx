@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import type Funcionario from "../../../models/Funcionario";
+import type Departamento from "../../../models/Departamento";
 import { useEffect, useState } from "react";
 import { buscar, deletar } from "../../../services/Service";
 
@@ -67,13 +68,10 @@ function DeletarFuncionario() {
             Não
           </button>
           <button
-            className="w-full text-slate-100 bg-indigo-400 
-                        hover:bg-indigo-600 flex items-center justify-center"
+            className="w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center"
             onClick={deletarFuncionario}
           >
-            {isLoading ? : (
-              <span>Sim</span>
-            )}
+            <span>Sim</span>
           </button>
         </div>
       </div>
