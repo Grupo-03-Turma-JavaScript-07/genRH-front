@@ -20,11 +20,11 @@ function Home() {
           className=" rounded-lg w-xs mb-6"
         />
               {hora < 12 ? (
-                <h1 className='text-6xl text-red-900 font-bold mb-10'>Bom dia!</h1>
+                <h1 className='text-6xl text-red-900 font-bold mb-10 drop-shadow-[0_0_6px_rgba(255,255,255,1)]'>Bom dia!</h1>
               ) : hora < 18 ? (
                 <h1 className='text-6xl text-red-900 font-bold mb-10 drop-shadow-[0_0_6px_rgba(255,255,255,1)]'>Boa tarde!</h1>
               ) : (
-                <h1 className='text-6xl text-red-900 font-bold mb-10'>Boa noite!</h1>
+                <h1 className='text-6xl text-red-900 font-bold mb-10 drop-shadow-[0_0_6px_rgba(255,255,255,1)]'>Boa noite!</h1>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pb-12 mx-4">
