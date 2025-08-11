@@ -1,69 +1,46 @@
-# React + TypeScript + Vite
+# genRH - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoCo
+lor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typ
+escript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=F
+FD62E)
+![Yarn](https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor
+=white)
+![License MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow?style=for-the-ba
+dge) ---
 
-Currently, two official plugins are available:
+## Sobre o Projeto
+O **genRH** é uma aplicação web para gestão de Recursos Humanos, desenvolvida como
+parte do projeto acadêmico do **Grupo 03 - Turma JavaScript 07**.  
+A aplicação permite que equipes de RH gerenciem colaboradores e processos internos de
+forma prática e eficiente.
+Este repositório contém o **frontend**, desenvolvido com **React**, **TypeScript** e
+**Vite** para garantir alta performance e uma experiência de usuário moderna. ---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+Cadastro de colaboradores - Edição e exclusão de colaboradores - Listagem e busca de funcionários - Visualização detalhada dos dados de colaboradores - Autenticação e login de usuários - Integração com o backend via API RESTful ---
 
-## Expanding the ESLint configuration
+## Integração Frontend e Backend
+O frontend consome a API do backend para realizar operações CRUD e autenticação,
+utilizando os seguintes endpoints principais: - `GET /colaboradores` - listar colaboradores - `POST /colaboradores` - cadastrar colaborador - `PUT /colaboradores/{id}` - atualizar colaborador - `DELETE /colaboradores/{id}` - excluir colaborador
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `POST /login` - autenticar usuário ---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tecnologias Utilizadas
+React + TypeScript - Vite - Yarn - Axios - React Router DOM - CSS Modules / Styled Components ---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Como Executar o Projeto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Pré-requisitos - Node.js (versão 18 ou superior) - Yarn instalado globalmente
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Passos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/Grupo-03-Turma-JavaScript-07/genRH-front.git
+cd genRH-front
+yarn
+yarn dev
 ```
