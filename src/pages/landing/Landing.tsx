@@ -36,8 +36,7 @@ function Landing() {
                 <Sobre />
                 <Tech />
                 <Futuro />
-                <FooterLanding />
-            
+                <FooterLanding />          
         </>
     )
 }

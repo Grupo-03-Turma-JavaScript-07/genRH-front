@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import Deletardepartamento from './components/departamentos/deletardepartamento/Deletardepartamento'
 import Listadepartamento from './components/departamentos/listadepartamento/Listadepartamento'
@@ -14,12 +14,13 @@ import Landing from './pages/landing/Landing'
 import FormDepartamento from './components/departamentos/formdepartamento/Formdepartamento'
 
 
-
-function App() {
+function AppRoutes() {
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/land' || '/login';
 
   return (
     <>
-      <BrowserRouter>
+      {!isLoginPage ? (
         <div className='grid grid-cols-[0.25fr_1.50fr] min-h-screen'>
           <div className='h-full'>
             <Navbar />
@@ -33,8 +34,8 @@ function App() {
                 <Route path='/funcionarios' element={<ListaFuncionarios />} />
                 <Route path='/manutencao' element={<Manutencao />} />
                 <Route path="/departamentos" element={<Listadepartamento />} />
-                <Route path="/departamentos/editar/:id" element={< FormDepartamento/>} />
-                <Route path="/departamentos/deletar/:id" element={< Deletardepartamento/>} />
+                <Route path="/departamentos/editar/:id" element={< FormDepartamento />} />
+                <Route path="/departamentos/deletar/:id" element={< Deletardepartamento />} />
                 <Route path="/departamentos/cadastrar" element={<FormDepartamento />} />
                 <Route path="/funcionarios" element={<ListaFuncionarios />} />
                 <Route path="/cadastrarfuncionario" element={<FormFuncionario />} />
@@ -46,9 +47,22 @@ function App() {
             <Footer />
           </div>
         </div>
-      </BrowserRouter>
+      ) : (
+        // Rotas que não possuem a Navbar (Login)
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+         )}
     </>
   )
 }
 
+function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
+}
 export default App
