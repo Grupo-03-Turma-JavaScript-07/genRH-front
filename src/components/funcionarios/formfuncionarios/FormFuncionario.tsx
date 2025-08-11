@@ -17,7 +17,6 @@ function FormFuncionario() {
     { id: 3, tipo: "Trainee" },
     { id: 4, tipo: "Estagio" }
   ];
-  const [contrato, setContratos] = useState<TipoContrato>({ id: 0, tipo: "" });
 
   const [departamento, setDepartamento] = useState<Departamento>({} as Departamento);
   const [funcionario, setFuncionario] = useState<Funcionario>({} as Funcionario);
@@ -26,13 +25,13 @@ function FormFuncionario() {
 
   async function buscarFuncionarioPorId(id: string) {
     try {
-      await buscar(`/funcionario/${id}`, setFuncionario);
+      await buscar(`/funcionarios/${id}`, setFuncionario);
     } catch (error: any) {}
   }
 
   async function buscarDepartamentoPorId(id: string) {
     try {
-      await buscar(`/departamento/${id}`, setDepartamento);
+      await buscar(`/departamentos/${id}`, setDepartamento);
     } catch (error: any) {}
   }
 
@@ -77,17 +76,16 @@ function FormFuncionario() {
     if (id !== undefined) {
       try {
         await atualizar(`/funcionarios`, funcionario, setFuncionario);
-
         alert("Funcionario atualizado com sucesso");
       } catch (error: any) {}
     } else {
       try {
         await cadastrar(`/funcionarios`, funcionario, setFuncionario);
-
         alert("Funcionario cadastrado com sucesso");
       } catch (error: any) {}
     }
 
+    console.log(funcionario)
     setIsLoading(false);
     retornar();
   }
@@ -97,7 +95,7 @@ function FormFuncionario() {
   return (
     <div className="container flex flex-col mx-auto items-center">
       <h1 className="text-4xl text-center my-8">
-        {id !== undefined ? "Editar Postagem" : "Cadastrar Funcionário"}
+        {id !== undefined ? "Editar Funcionario" : "Cadastrar Funcionário"}
       </h1>
 
       <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoFuncionario}>
@@ -143,11 +141,9 @@ function FormFuncionario() {
             name="contrato"
             id="contrato"
             className="border p-2 border-slate-800 rounded"
-            onChange={(e) => buscarDepartamentoPorId(e.currentTarget.value)}
+            onChange={(e) => setFuncionario({...funcionario, contrato:+e.currentTarget.value})}
           >
-            <option value="" selected disabled>
-              Selecione o tipo de Contrato
-            </option>
+            <option value="" selected disabled>Selecione o tipo de Contrato</option>
 
             {tipoContrato.map((contrato) => (
               <>

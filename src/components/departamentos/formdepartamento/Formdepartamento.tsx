@@ -57,6 +57,8 @@ function FormDepartamento() {
     } catch (error) {
       alert("Erro ao salvar categoria.");
     }
+
+    console.log(departamento)
   }
 
   if (id !== undefined && isLoading) {
