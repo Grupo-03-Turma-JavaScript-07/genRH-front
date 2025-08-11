@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type Departamento from "../../../models/Departamento";
 import { buscar } from "../../../services/Service";
-import { Link } from "react-router-dom";
+import CartDepartamento from "../cartdepartamento/CartDepartamento";
 
 function ListaDepartamento() {
   const [departamentos, setDepartamentos] = useState<Departamento[]>([]);

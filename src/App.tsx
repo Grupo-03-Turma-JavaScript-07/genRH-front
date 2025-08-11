@@ -4,20 +4,21 @@ import './App.css'
 import Deletardepartamento from './components/departamentos/deletardepartamento/Deletardepartamento'
 import Listadepartamento from './components/departamentos/listadepartamento/Listadepartamento'
 import Footer from './components/footer/Footer'
-import ListaFuncionarios from './components/funcionarios/listafuncionarios/ListaFuncionarios'
-import Navbar from './components/navbar/Navbar'
-import Home from './pages/home/Home'
-import Login from './pages/login/Login'
-import Manutencao from './pages/manutencao/Manutencao'
 import DeletarFuncionario from './components/funcionarios/deletarfuncionario/DeletarFuncionario'
 import FormFuncionario from './components/funcionarios/formfuncionarios/FormFuncionario'
+import ListaFuncionarios from './components/funcionarios/listafuncionarios/ListaFuncionarios'
+import Navbar from './components/navbar/Navbar'
 import Landing from './pages/landing/Landing'
-import FormDepartamento from './components/departamentos/formdepartamento/Formdepartamento'
+import Login from './pages/login/Login'
+import Manutencao from './pages/manutencao/Manutencao'
+import FormDepartamento from './components/departamentos/formdepartamento/FormDepartamento'
+import Home from './pages/home/Home'
+
 
 
 function AppRoutes() {
   const location = useLocation();
-  const isLoginPage = location.pathname === '/' || '/login';
+  const isLoginPage = location.pathname === '/' || location.pathname === '/login';
 
   return (
     <>
@@ -35,8 +36,8 @@ function AppRoutes() {
                 <Route path='/funcionarios' element={<ListaFuncionarios />} />
                 <Route path='/manutencao' element={<Manutencao />} />
                 <Route path="/departamentos" element={<Listadepartamento />} />
-                <Route path="/departamentos/editar/:id" element={< FormDepartamento />} />
-                <Route path="/departamentos/deletar/:id" element={< Deletardepartamento />} />
+                <Route path="/departamentos/editar/:id" element={<FormDepartamento />} />
+                <Route path="/departamentos/deletar/:id" element={<Deletardepartamento />} />
                 <Route path="/departamentos/cadastrar" element={<FormDepartamento />} />
                 <Route path="/funcionarios" element={<ListaFuncionarios />} />
                 <Route path="/cadastrarfuncionario" element={<FormFuncionario />} />
@@ -54,7 +55,7 @@ function AppRoutes() {
           <Route path='/' element={<Landing />} />
           <Route path='/login' element={<Login />} />
         </Routes>
-         )}
+      )}
     </>
   );
 }
