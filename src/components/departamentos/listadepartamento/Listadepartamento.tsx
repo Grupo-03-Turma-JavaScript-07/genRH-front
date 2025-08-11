@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import type Departamento from "../../../models/Departamento";
 import { buscar } from "../../../services/Service";
-import CartDepartamento from "../cartdepartamento/CartDepartamento";
-
-
+import { Link } from "react-router-dom";
 
 function ListaDepartamento() {
   const [departamentos, setDepartamentos] = useState<Departamento[]>([]);
@@ -21,7 +19,7 @@ function ListaDepartamento() {
       <div className="container flex flex-col">
         <h1 className="text-3xl text-center font-semibold p-2 my-4">Departamentos</h1>
         {departamentos.length === 0 ? (
-          <p className="text-center text-xl">Carregando departamentos...</p>
+          <p className="text-center text-xl p-4">Carregando departamentos...</p>
         ) : (
           <>
             <div className="w-[70vw] mx-auto">
@@ -42,8 +40,7 @@ function ListaDepartamento() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default ListaDepartamento;
-
+export default ListaDepartamento
