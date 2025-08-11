@@ -20,23 +20,25 @@ function Home() {
           className=" rounded-lg w-xs mb-6"
         />
               {hora < 12 ? (
-                <h1 className='text-6xl text-red-900 font-bold mb-10'>Bom dia!</h1>
+                <h1 className='text-6xl text-red-900 font-bold mb-10 drop-shadow-[0_0_6px_rgba(255,255,255,1)]'>Bom dia!</h1>
               ) : hora < 18 ? (
                 <h1 className='text-6xl text-red-900 font-bold mb-10 drop-shadow-[0_0_6px_rgba(255,255,255,1)]'>Boa tarde!</h1>
               ) : (
-                <h1 className='text-6xl text-red-900 font-bold mb-10'>Boa noite!</h1>
+                <h1 className='text-6xl text-red-900 font-bold mb-10 drop-shadow-[0_0_6px_rgba(255,255,255,1)]'>Boa noite!</h1>
               )}
 
-              <div className="grid grid-cols-6 pb-12 gap-15 mx-30">
-                <div className=" col-span-3 text-nowrap font-bold text-5xl drop-shadow-[0_0_8px_rgba(255,255,255,1)]">Tecnologia que valoriza pessoas</div>
-                <div className="col-span-3"></div>
-                <div className=""></div>
-                <div className="col-span-3 text-nowrap font-bold text-5xl drop-shadow-[0_0_8px_rgba(255,255,255,1)]">Simplifique o RH. Potencialize resultados</div>
-                <div className="col-span-2"></div>
-                <div className="col-span-2"></div>
-                <div className="col-span-2 font-bold text-5xl text-nowrap drop-shadow-[0_0_8px_rgba(255,255,255,1)]">Tudo para o seu RH, em um só lugar</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pb-12 mx-4">
+                <div className="text-nowrap font-bold text-3xl md:text-2x1 drop-shadow-[0_0_8px_rgba(255,255,255,1)]">
+                  Tecnologia que valoriza pessoas
+                </div>
+                <div className="col-span-1 sm:col-span-2 md:col-span-3 text-nowrap font-bold text-3xl md:text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,1)]">
+                  Simplifique o RH. Potencialize resultados
+                </div>
+                <div className="col-span-1 sm:col-span-2 font-bold text-3xl md:text-2xl text-nowrap drop-shadow-[0_0_8px_rgba(255,255,255,1)]">
+                  Tudo para o seu RH, em um só lugar
+                </div>
               </div>
-            </div>
+            </div> 
           </section>
     )
 }
