@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { tecnologiasBack } from "../data/tecnologiasback";
 import { tecnologiasBanco } from "../data/tecnologiasbanco";
-import { tecnologiasDeploy } from "../data/tecnologiasDeploy";
 import { tecnologiasFront } from "../data/tecnologiasfront";
 import { tecnologiasLinguagem } from "../data/tecnologiaslinguagem";
 import CardTech from "./CardTech";
@@ -10,7 +9,6 @@ function Tech() {
   const backend = tecnologiasBack;
   const frontend = tecnologiasFront;
   const banco = tecnologiasBanco;
-  const deploy = tecnologiasDeploy;
   const linguagem = tecnologiasLinguagem;
 
   return (
@@ -52,15 +50,6 @@ function Tech() {
                 BANCO DE DADOS </h3>
               <div className="flex flex-wrap flex-row justify-center gap-12 ">
                 {banco.map((tech) => (
-                  <CardTech key={tech.id} techs={tech} />
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <h3 className=' px-10 pb-5 text-4xl font-semibold  text-red-800 '>
-                DEPLOY </h3>
-              <div className="flex flex-wrap flex-row justify-center gap-12 ">
-                {deploy.map((tech) => (
                   <CardTech key={tech.id} techs={tech} />
                 ))}
               </div>

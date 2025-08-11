@@ -11,8 +11,8 @@ import Navbar from './components/navbar/Navbar'
 import Landing from './pages/landing/Landing'
 import Login from './pages/login/Login'
 import Manutencao from './pages/manutencao/Manutencao'
-import FormDepartamento from './components/departamentos/formdepartamento/FormDepartamento'
 import Home from './pages/home/Home'
+import FormDepartamento from './components/departamentos/formdepartamento/Formdepartamento'
 
 
 
