@@ -1,51 +1,40 @@
 import { Link } from "react-router-dom";
-import type Funcionario from "../../../models/Funcionario"
+import type Funcionario from "../../../models/Funcionario";
+import { PencilSimpleIcon, TrashIcon } from "@phosphor-icons/react";
 
 interface TabelaFuncionariosProps{
   funcionario: Funcionario
 }
 
 function TabelaFuncionarios({funcionario} : TabelaFuncionariosProps) {
+
+    const contract:number = funcionario.contrato
+    let contractname:string = ""
+    switch(contract){
+      case 1:
+        contractname = "CLT";
+        break;
+      case 2:
+        contractname = "PJ";
+        break;
+      case 3:
+        contractname = "Trainee";
+        break;
+      case 4:
+        contractname = "Estágio";
+        break;
+    }
+
   return (
-    <div
-      className="border-slate-900 border 
-            flex flex-col rounded overflow-hidden justify-between"
-    >
-      <div>
-        <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
-          <h3 className="text-lg font-bold text-center uppercase">
-            {funcionario.nome}
-          </h3>
-        </div>
-        <div className="p-4 ">
-          <h4 className="text-lg font-semibold uppercase">{funcionario.cpf}</h4>
-          <p>{funcionario.salario}</p>
-          <p>
-            Data:{" "}
-            {new Intl.DateTimeFormat(undefined, {
-              dateStyle: "full",
-              timeStyle: "medium",
-            }).format(new Date(funcionario.contrato))}
-          </p>
-        </div>
-      </div>
-      <div className="flex">
-        <Link
-          to={`/editarfuncionario/${funcionario.id}`}
-          className="w-full text-white bg-indigo-400 
-                    hover:bg-indigo-800 flex items-center justify-center py-2"
-        >
-          <button>Editar</button>
-        </Link>
-        <Link
-          to={`/deletarfuncionario/${funcionario.id}`}
-          className="text-white bg-red-400 
-	hover:bg-red-700 w-full flex items-center justify-center"
-        >
-          <button>Deletar</button>
-        </Link>
-      </div>
-    </div>
+    <tr className="bg-white border hover:bg-gray-200 text-center">
+      <td className="px-6 py-4 text-black text-lg">{funcionario.id}</td>
+      <td className="px-6 py-4 text-black text-lg">{funcionario.nome}</td>
+      <td className="px-6 py-4 text-black text-lg">R$ {funcionario.salario}</td>
+      <td className="px-6 py-4 text-black text-lg">{contractname}</td>
+      <td className="px-6 py-4 text-black text-lg">{funcionario.departamento?.descricao}</td>
+      <td className="font-lg"><Link to={`/editarfuncionario/${funcionario.id}`}><PencilSimpleIcon className="border bg-yellow-200 text-black text-2xl mx-auto"/></Link></td>
+      <td className="font-lg"><Link to={`/deletarfuncionario/${funcionario.id}`}><TrashIcon className="border bg-red-200 text-black text-2xl mx-auto"/></Link></td>
+    </tr>
   );
 }
 
