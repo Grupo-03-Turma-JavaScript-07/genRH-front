@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Deletardepartamento from './components/departamentos/deletardepartamento/Deletardepartamento'
-import FormDepartamento from "./components/departamentos/formdepartamento/FormDepartamento"
 import Listadepartamento from './components/departamentos/listadepartamento/Listadepartamento'
 import Footer from './components/footer/Footer'
 import ListaFuncionarios from './components/funcionarios/listafuncionarios/ListaFuncionarios'
@@ -11,6 +10,7 @@ import Login from './pages/login/Login'
 import Manutencao from './pages/manutencao/Manutencao'
 import DeletarFuncionario from './components/funcionarios/deletarfuncionario/DeletarFuncionario'
 import FormFuncionario from './components/funcionarios/formfuncionarios/FormFuncionario'
+import FormDepartamento from './components/departamentos/formdepartamento/Formdepartamento'
 
 
 
