@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import Deletardepartamento from './components/departamentos/deletardepartamento/Deletardepartamento'
@@ -55,9 +56,10 @@ function AppRoutes() {
         </Routes>
          )}
     </>
-  )
+  );
 }
 
+// Componente principal App
 function App() {
   return (
     <BrowserRouter>
@@ -65,4 +67,5 @@ function App() {
     </BrowserRouter>
   );
 }
-export default App
+export default App;
+

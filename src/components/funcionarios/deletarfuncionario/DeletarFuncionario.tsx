@@ -1,7 +1,7 @@
-import { useNavigate, useParams } from "react-router-dom";
-import type Funcionario from "../../../models/Funcionario";
-import type Departamento from "../../../models/Departamento";
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import type Departamento from "../../../models/Departamento";
+import type Funcionario from "../../../models/Funcionario";
 import { buscar, deletar } from "../../../services/Service";
 
 function DeletarFuncionario() {
@@ -14,10 +14,9 @@ function DeletarFuncionario() {
 
   const { id } = useParams<{ id: string }>();
 
-
   async function buscarPorId(id: string) {
     try {
-      await buscar(`/funcionario/${id}`, setFuncionario);
+      await buscar(`/funcionarios/${id}`, setFuncionario);
     } catch (error: any) {}
   }
 
@@ -44,6 +43,26 @@ function DeletarFuncionario() {
     navigate("/funcionarios");
   }
 
+  const contract:number = funcionario.contrato
+    let contractname:string = ""
+    switch(contract){
+      case 1:
+        contractname = "CLT";
+        break;
+      case 2:
+        contractname = "PJ";
+        break;
+      case 3:
+        contractname = "Trainee";
+        break;
+      case 4:
+        contractname = "Estágio";
+        break;
+      default:
+        contractname = "";
+        break;
+    }
+
   return (
     <div className="container w-1/3 mx-auto">
       <h1 className="text-4xl text-center my-4">Deletar</h1>
@@ -53,12 +72,14 @@ function DeletarFuncionario() {
       </p>
 
       <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-        <header className="py-2 px-6 bg-indigo-600 text-white font-bold text-2xl">
-          Funcionário
+        <header className="py-2 px-6 bg-indigo-600 text-white text-center font-bold text-2xl">
+          {funcionario.nome}
         </header>
-        <div className="p-4">
-          <p className="text-xl h-full">{funcionario.nome}</p>
-          <p>{departamento.nome}</p>
+        <div className="">
+          <p className='py-2 px-4 text-lg bg-slate-200 h-full'><strong>Departamento:</strong> {funcionario.departamento?.descricao}</p>
+          <p className='py-2 px-4 text-lg bg-slate-200 h-full'><strong>CPF:</strong> {funcionario.cpf}</p>
+          <p className='py-2 px-4 text-lg bg-slate-200 h-full'><strong>Salário:</strong> {funcionario.salario}</p>
+          <p className='py-2 px-4 text-lg bg-slate-200 h-full'><strong>Contrato:</strong> {contractname}</p>
         </div>
         <div className="flex">
           <button

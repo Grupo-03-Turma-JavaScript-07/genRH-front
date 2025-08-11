@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import type Departamento from "../../../models/Departamento"
+import { PencilSimpleIcon, TrashIcon } from "@phosphor-icons/react"
 
 
 interface CartDepartamentoProps{
@@ -9,24 +10,11 @@ interface CartDepartamentoProps{
 function CartDepartamento({departamento}: CartDepartamentoProps ) {
 
   return (
-    <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-red-800 text-white font-bold text-2xl'>Departamento</header>
-            {/* <p className='p-8 text-3xl bg-slate-200 h-full'>{departamento.nome}</p> */}
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{departamento.descricao}</p>
-            
-            <div className="flex">
-                <Link to={`/departamentos/editar/${departamento.id}`}
-                    className='w-full text-slate-100 bg-red-400 hover:bg-red-800 flex items-center justify-center py-2'>
-                    <button>Editar</button>
-                </Link>
-
-                <Link to={`/departamentos/deletar/${departamento.id}`} 
-                    className='text-slate-100 bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
-                    <button>Deletar</button>
-                </Link>
-
-            </div>
-        </div>
+    <tr className="bg-white border hover:bg-gray-200 text-center">
+      <td className="px-6 py-4 text-black text-lg">{departamento.descricao}</td>
+      <td className="font-lg"><Link to={`/departamentos/editar/${departamento.id}`}><PencilSimpleIcon className="border bg-yellow-200 text-black text-2xl mx-auto"/></Link></td>
+      <td className="font-lg"><Link to={`/departamentos/deletar/${departamento.id}`}><TrashIcon className="border bg-red-200 text-black text-2xl mx-auto"/></Link></td>
+    </tr>
   )
 }
 
