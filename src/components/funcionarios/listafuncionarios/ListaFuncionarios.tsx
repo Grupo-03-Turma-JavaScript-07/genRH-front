@@ -3,7 +3,6 @@ import TabelaFuncionarios from "../tabelafuncionario/TabelaFuncionarios";
 import type Funcionario from "../../../models/Funcionario";
 import { useEffect, useState } from "react";
 import { buscar } from "../../../services/Service";
-import { Dna } from "@phosphor-icons/react";
 
 function ListaFuncionarios() {
   const navigate = useNavigate();
