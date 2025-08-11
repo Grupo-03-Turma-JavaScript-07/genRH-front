@@ -16,7 +16,7 @@ import FormDepartamento from './components/departamentos/formdepartamento/Formde
 
 function AppRoutes() {
   const location = useLocation();
-  const isLoginPage = location.pathname === '/land' || '/login';
+  const isLoginPage = location.pathname === '/' || '/login';
 
   return (
     <>
